@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AJC Taxonomy Explorer</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#e3e3e3;--card:#f7f7f8;--H:#1a7f4b;--M:#b7791f;--L:#c0392b;--acc:#0b4fff}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#eee;--mut:#9a9a9a;--line:#2d2d32;--card:#1d1d21;--H:#4cc38a;--M:#e0a84a;--L:#ef7a6c;--acc:#7aa2ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,sans-serif;padding:16px;max-width:1000px;margin:auto}
+h1{font-size:20px;margin:0 0 2px}.sub{color:var(--mut);margin-bottom:12px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+input{flex:1;min-width:180px;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg)}
+button{padding:7px 12px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);cursor:pointer}
+button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.node{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;background:var(--card)}
+.kids{margin-left:18px;border-left:2px solid var(--line);padding-left:8px}
+.row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.lab{font-weight:600}.id{color:var(--mut);font:12px ui-monospace,monospace}
+.b{font-size:11px;padding:1px 6px;border-radius:10px;border:1px solid currentColor}.H{color:var(--H)}.M{color:var(--M)}.L{color:var(--L)}.t{color:var(--mut)}
+.det{color:var(--mut);font-size:12px;margin-top:3px}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:6px;text-align:left;vertical-align:top}
+</style></head><body>
+<h1>AJC Taxonomy Explorer</h1><div class="sub" id="sub"></div>
+<div class="bar"><input id="q" placeholder="Search label, alias, id, or legacy value (try: uga, varsity, buckhead)"><span id="tabs"></span></div>
+<div id="out"></div>
+<script>
+const D=__DATA__;
+const facets=[["topics","Topics"],["entities","Entities"],["geo","Geo"],["formats","Formats"],["page_types","Page types"],["programs","Programs"],["onboarding","Onboarding map"],["decisions","Decisions"]];
+let cur="topics";const $=s=>document.querySelector(s);
+$("#sub").textContent=`v${D.version} · MOCK, not editorially approved`;
+$("#tabs").innerHTML=facets.map(f=>`<button data-f="${f[0]}">${f[1]}</button>`).join(" ");
+const esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const hay=n=>JSON.stringify([n.id,n.label,n.aliases,n.legacy]).toLowerCase();
+function det(n){const p=[];if(n.aliases)p.push("aliases: "+n.aliases.join(", "));
+ if(n.legacy)p.push("legacy: "+Object.entries(n.legacy).map(([k,v])=>k+"="+[].concat(v).join("|")).join("; "));
+ const ch=["follow","push"].filter(k=>n[k]).join("+");if(ch)p.push("opt-in: "+ch);if(n.note)p.push(n.note);return p.map(esc).join("<br>")}
+function node(n,kids){return `<div class="node"><div class="row"><span class="lab">${esc(n.label)}</span><span class="b ${n.conf||""}">${n.conf||"?"}</span>${n.type?`<span class="b t">${esc(n.type)}</span>`:""}<span class="id">${esc(n.id)}</span></div><div class="det">${det(n)}</div>${kids||""}</div>`}
+function tree(list,q){const by={};list.forEach(n=>(by[n.parent||"_"]??=[]).push(n));
+ const keep=new Set();if(q){list.forEach(n=>{if(hay(n).includes(q)){let x=n;while(x){keep.add(x.id);x=list.find(y=>y.id===x.parent)}}})}
+ const r=p=>(by[p]||[]).filter(n=>!q||keep.has(n.id)).map(n=>node(n,by[n.id]?`<div class="kids">${r(n.id)}</div>`:"")).join("");return r("_")}
+function render(){const q=$("#q").value.trim().toLowerCase();
+ document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.f===cur));
+ let h="";
+ if(cur==="onboarding"){const m=D.onboarding_map;h=`<p class="sub">${esc(m.source)}</p><table><tr><th>Onboarding label</th><th>Selected</th><th>Taxonomy node</th></tr>${Object.entries(m.map).map(([k,v])=>`<tr><td>${esc(k)}</td><td>${v.selected.toLocaleString()}</td><td>${esc(v.node)}${v.note?`<div class="det">${esc(v.note)}</div>`:""}</td></tr>`).join("")}</table>`}
+ else if(cur==="decisions"){h=`<table><tr><th>Date</th><th>Section</th><th>Decision</th></tr>${D.decisions.map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.section)}</td><td>${esc(x.decision)}</td></tr>`).join("")}</table>`}
+ else{const list=D.facets[cur];h=(cur==="topics"||cur==="geo")?tree(list,q):list.filter(n=>!q||hay(n).includes(q)).map(n=>node(n)).join("");
+  if(!h)h='<p class="sub">No matches.</p>'}
+ $("#out").innerHTML=h}
+document.addEventListener("click",e=>{const f=e.target.dataset&&e.target.dataset.f;if(f){cur=f;render()}});
+$("#q").addEventListener("input",render);render();
+</script></body></html>
