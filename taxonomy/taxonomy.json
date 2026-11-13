@@ -1,0 +1,3445 @@
+{
+  "version": "0.17-mock",
+  "generated": "2026-11-13",
+  "status": "MOCK - inferred from Amplitude (AJC [PROD SDK] 764792) + Tableau Newsroom Dashboards. Not editorially approved. v0.2 adds onboarding evidence (Aug-Nov 2026, 764792).",
+  "id_convention": "ajc:<facet>/<slug-path>  (immutable, lowercase, hyphenated; labels and aliases may change, ids never do)",
+  "node_fields": {
+    "id": "stable id",
+    "label": "display name",
+    "parent": "parent id or null",
+    "level": "depth within facet (1 = top)",
+    "aliases": "synonyms for search + tag-matching",
+    "legacy": "existing values this node absorbs (site_section path, Tableau Site Section Name, Pod, Arc content_tags)",
+    "follow": "user may follow / opt in",
+    "push": "eligible for push opt-in (needs breaking/alert cadence)",
+    "email": "newsletter id once product confirms (null = none known)",
+    "conf": "H/M/L confidence this node is right, per mock"
+  },
+  "facets": {
+    "topics": [
+      {
+        "id": "ajc:topic/news",
+        "label": "News",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "site_section": [
+            "/news"
+          ],
+          "section_name": [
+            "News"
+          ],
+          "pod": [
+            "Metro/State"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/news/metro-atlanta",
+        "label": "Metro Atlanta",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "site_section": [
+            "/news/atlanta-news"
+          ],
+          "section_name": [
+            "Atlanta News",
+            "Metro Atlanta"
+          ]
+        },
+        "aliases": [
+          "atlanta news",
+          "local news"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/news/georgia",
+        "label": "Georgia",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Georgia News"
+          ],
+          "tags": [
+            "georgia-news.ajc"
+          ]
+        },
+        "aliases": [
+          "state news"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/news/southeast",
+        "label": "Southeast",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Southeast News"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/news/crime-public-safety",
+        "label": "Crime & Public Safety",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "tags": [
+            "crime-news-ajc"
+          ]
+        },
+        "aliases": [
+          "crime",
+          "police"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/news/breaking",
+        "label": "Breaking News",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "tags": [
+            "breaking-news-ajc"
+          ]
+        },
+        "follow": false,
+        "push": true,
+        "conf": "M",
+        "note": "Alert channel, not an interest. Treat as push-only subscription."
+      },
+      {
+        "id": "ajc:topic/weather",
+        "label": "Weather",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Atlanta Weather"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Promoted to L1 in v0.2: 816 onboarding selections, on par with Education/Wellness."
+      },
+      {
+        "id": "ajc:topic/news/traffic-transportation",
+        "label": "Traffic & Transportation",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Atlanta Traffic"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/obituaries",
+        "label": "Obituaries",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Obituaries"
+          ]
+        },
+        "follow": false,
+        "push": false,
+        "conf": "H",
+        "note": "High utility, different intent (lookup). Exclude from interest inference."
+      },
+      {
+        "id": "ajc:topic/politics",
+        "label": "Politics",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "site_section": [
+            "/politics"
+          ],
+          "section_name": [
+            "Politics"
+          ],
+          "pod": [
+            "Politics"
+          ],
+          "editorial_team": [
+            "politics"
+          ],
+          "tags": [
+            "politics-ajc"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "L2 has two groups: arenas (Georgia, Legislature, Elections, Federal) and issues. Decision 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/politics/georgia-politics",
+        "label": "Georgia Politics",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Politically Georgia"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/politics/legislature",
+        "label": "Georgia Legislature",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Legislature"
+          ]
+        },
+        "aliases": [
+          "general assembly",
+          "state capitol"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/politics/elections",
+        "label": "Elections",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Elections"
+          ]
+        },
+        "aliases": [
+          "voting",
+          "races",
+          "ballot"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/politics/trump-administration",
+        "label": "Trump Administration",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Trump Administration"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Section is tied to a presidency; consider renaming to 'White House & Federal Government' so it survives a transition."
+      },
+      {
+        "id": "ajc:topic/business",
+        "label": "Business",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "site_section": [
+            "/business"
+          ],
+          "section_name": [
+            "Business"
+          ],
+          "pod": [
+            "Business"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/business/economy-jobs",
+        "label": "Economy, Jobs & Prices",
+        "parent": "ajc:topic/business",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Confirmed in review 2026-11-13: layoffs, taxes, consumer prices, workplace stories."
+      },
+      {
+        "id": "ajc:topic/business/real-estate",
+        "label": "Retail & Real Estate",
+        "parent": "ajc:topic/business",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Confirmed in review 2026-11-13: malls, office towers, housing development. Real-estate features also exist in Lifestyle (/things-to-do/private-quarters, 13K views/30d)."
+      },
+      {
+        "id": "ajc:topic/sports",
+        "label": "Sports",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "site_section": [
+            "/sports"
+          ],
+          "section_name": [
+            "Sports"
+          ],
+          "pod": [
+            "Pro & College Sports"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Highest onboarding removal rate (4.4%). Prefer team follows in the UI."
+      },
+      {
+        "id": "ajc:topic/sports/football",
+        "label": "Football",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/sports/baseball",
+        "label": "Baseball",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/sports/basketball",
+        "label": "Basketball",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/sports/soccer",
+        "label": "Soccer",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Soccer"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/sports/golf",
+        "label": "Golf",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Golf"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/sports/high-school",
+        "label": "High School Sports",
+        "parent": "ajc:topic/sports",
+        "level": 2,
+        "legacy": {
+          "site_section": [
+            "/sports/varsity"
+          ],
+          "section_name": [
+            "AJC Varsity"
+          ],
+          "pod": [
+            "Varsity"
+          ],
+          "tags": [
+            "ajc-varsity",
+            "high-school-sports"
+          ]
+        },
+        "aliases": [
+          "varsity",
+          "prep sports"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Its own pod and bracket product; highest-affinity local audience."
+      },
+      {
+        "id": "ajc:topic/opinion",
+        "label": "Opinion",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "site_section": [
+            "/opinion"
+          ],
+          "section_name": [
+            "Opinion"
+          ],
+          "pod": [
+            "Opinion"
+          ],
+          "editorial_team": [
+            "opinion"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/opinion/editorials",
+        "label": "Editorials & Columns",
+        "parent": "ajc:topic/opinion",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/arts-entertainment",
+        "label": "Arts & Entertainment",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Arts & Entertainment",
+            "Georgia Entertainment Scene"
+          ],
+          "pod": [
+            "Lifestyle"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/arts-entertainment/music",
+        "label": "Music",
+        "parent": "ajc:topic/arts-entertainment",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "L"
+      },
+      {
+        "id": "ajc:topic/arts-entertainment/film-tv",
+        "label": "Film & TV",
+        "parent": "ajc:topic/arts-entertainment",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Georgia production industry is a likely local strength."
+      },
+      {
+        "id": "ajc:topic/food-dining",
+        "label": "Food & Dining",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Food & Dining",
+            "Dining"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/lifestyle",
+        "label": "Lifestyle",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "pod": [
+            "Lifestyle"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "ui_visible": false,
+        "note": "Editorial grouping only. Onboarding users pick Things To Do / Travel / Wellness as peers of News, so surface the children directly."
+      },
+      {
+        "id": "ajc:topic/lifestyle/things-to-do",
+        "label": "Things to Do",
+        "parent": "ajc:topic/lifestyle",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Things to do",
+            "AA Weekend Picks",
+            "Access Atlanta"
+          ]
+        },
+        "aliases": [
+          "events",
+          "weekend"
+        ],
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "ui_level_override": 1
+      },
+      {
+        "id": "ajc:topic/lifestyle/travel",
+        "label": "Travel",
+        "parent": "ajc:topic/lifestyle",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Travel",
+            "AA Travel"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H",
+        "ui_level_override": 1
+      },
+      {
+        "id": "ajc:topic/lifestyle/wellness",
+        "label": "Wellness",
+        "parent": "ajc:topic/lifestyle",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Wellness"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H",
+        "ui_level_override": 1
+      },
+      {
+        "id": "ajc:topic/lifestyle/home-garden",
+        "label": "Home & Garden",
+        "parent": "ajc:topic/lifestyle",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Home and Garden"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H",
+        "ui_level_override": 1
+      },
+      {
+        "id": "ajc:topic/education",
+        "label": "Education",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Education"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/education/k12",
+        "label": "K-12 Schools",
+        "parent": "ajc:topic/education",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Get Schooled"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "M"
+      },
+      {
+        "id": "ajc:topic/education/higher-ed",
+        "label": "Higher Education",
+        "parent": "ajc:topic/education",
+        "level": 2,
+        "legacy": {
+          "section_name": [
+            "Higher Education"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/health",
+        "label": "Health",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "section_name": [
+            "Health News"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:topic/politics/issues/immigration",
+        "label": "Immigration",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "group": "issue",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Issue-based interest; ILLUSTRATIVE list pending newsroom input. Issue topics only: no party or ideology labels."
+      },
+      {
+        "id": "ajc:topic/politics/issues/health-care",
+        "label": "Health Care",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "group": "issue",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Issue-based interest; ILLUSTRATIVE list pending newsroom input. Issue topics only: no party or ideology labels."
+      },
+      {
+        "id": "ajc:topic/politics/issues/economy-taxes",
+        "label": "Economy & Taxes",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "group": "issue",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Issue-based interest; ILLUSTRATIVE list pending newsroom input. Issue topics only: no party or ideology labels."
+      },
+      {
+        "id": "ajc:topic/politics/issues/education-policy",
+        "label": "Education Policy",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "group": "issue",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Issue-based interest; ILLUSTRATIVE list pending newsroom input. Issue topics only: no party or ideology labels."
+      },
+      {
+        "id": "ajc:topic/politics/issues/environment-energy",
+        "label": "Environment & Energy",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "group": "issue",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Issue-based interest; ILLUSTRATIVE list pending newsroom input. Issue topics only: no party or ideology labels."
+      },
+      {
+        "id": "ajc:topic/politics/statewide-offices",
+        "label": "Statewide Offices",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Governor, attorney general and other statewide offices and agencies. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/politics/congress",
+        "label": "U.S. Congress",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Senate and House, Georgia delegation and districts. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/politics/courts-justice",
+        "label": "Courts & Justice",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "State and U.S. Supreme Court, major rulings, election-law cases. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/politics/parties",
+        "label": "Political Parties",
+        "parent": "ajc:topic/politics",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Coverage of the parties as organizations; NOT reader affiliation. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/news/local-government",
+        "label": "Local Government",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "County commissions, city councils, school boards. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/news/courts-trials",
+        "label": "Courts & Trials",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Local trials, judges, major legal cases. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/news/nation-world",
+        "label": "Nation & World",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Biggest section gap: 68,596 page views in 30 days, no node before v0.12. Added in review 2026-11-13.",
+        "legacy": {
+          "site_section": [
+            "/news/nation-world"
+          ]
+        }
+      },
+      {
+        "id": "ajc:topic/news/environment-energy",
+        "label": "Environment & Energy",
+        "parent": "ajc:topic/news",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Okefenokee, Georgia Power, climate, water. Added in review 2026-11-13.",
+        "legacy": {}
+      },
+      {
+        "id": "ajc:topic/business/data-centers-energy",
+        "label": "Data Centers & Energy",
+        "parent": "ajc:topic/business",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Cross-pod thread (Business, Opinion, Investigative); includes Georgia Power and gas prices. About 64 headline mentions. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/business/aviation-airport",
+        "label": "Aviation & Airport",
+        "parent": "ajc:topic/business",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Delta and Hartsfield-Jackson; about 64 combined headline mentions. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/food-dining/restaurants-openings",
+        "label": "Restaurants & Openings",
+        "parent": "ajc:topic/food-dining",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Reviews, openings, closings, the dining scene. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/food-dining/food-events-popups",
+        "label": "Food Events & Pop-ups",
+        "parent": "ajc:topic/food-dining",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Pop-ups, food festivals, chef events. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/lifestyle/things-to-do/festivals-concerts",
+        "label": "Festivals & Concerts",
+        "parent": "ajc:topic/lifestyle/things-to-do",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seasonal events and live music; links to event entities. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:topic/lifestyle/things-to-do/weekend-guides",
+        "label": "Weekend Guides",
+        "parent": "ajc:topic/lifestyle/things-to-do",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Curated weekend and seasonal picks. May be better modeled as a program; kept as a topic per review. Added 2026-11-13."
+      }
+    ],
+    "entities": [
+      {
+        "id": "ajc:entity/team/atlanta-falcons",
+        "label": "Atlanta Falcons",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/football",
+        "legacy": {
+          "section_name": [
+            "Atlanta Falcons"
+          ]
+        },
+        "aliases": [
+          "falcons",
+          "dirty birds"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "level": "pro"
+      },
+      {
+        "id": "ajc:entity/team/atlanta-braves",
+        "label": "Atlanta Braves",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/baseball",
+        "legacy": {
+          "site_section": [
+            "/sports/atlanta-braves"
+          ],
+          "section_name": [
+            "Atlanta Braves"
+          ]
+        },
+        "aliases": [
+          "braves"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "level": "pro"
+      },
+      {
+        "id": "ajc:entity/team/atlanta-hawks",
+        "label": "Atlanta Hawks",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/basketball",
+        "legacy": {
+          "section_name": [
+            "Atlanta Hawks"
+          ]
+        },
+        "aliases": [
+          "hawks"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "level": "pro"
+      },
+      {
+        "id": "ajc:entity/team/atlanta-united",
+        "label": "Atlanta United",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/soccer",
+        "legacy": {
+          "section_name": [
+            "Atlanta United"
+          ]
+        },
+        "aliases": [
+          "atl utd",
+          "five stripes"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "level": "pro"
+      },
+      {
+        "id": "ajc:entity/team/georgia-bulldogs",
+        "label": "Georgia Bulldogs",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/football",
+        "legacy": {
+          "site_section": [
+            "/sports/georgia-bulldogs"
+          ],
+          "section_name": [
+            "Georgia Bulldogs"
+          ]
+        },
+        "aliases": [
+          "uga",
+          "dawgs"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Covers multiple sports; model sport as an attribute of the content, not the team.",
+        "level": "college"
+      },
+      {
+        "id": "ajc:entity/team/georgia-tech",
+        "label": "Georgia Tech Yellow Jackets",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/football",
+        "legacy": {
+          "site_section": [
+            "/sports/georgia-tech"
+          ],
+          "section_name": [
+            "Georgia Tech"
+          ]
+        },
+        "aliases": [
+          "gt",
+          "yellow jackets"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "level": "college"
+      },
+      {
+        "id": "ajc:entity/person/greg-bluestein",
+        "label": "Greg Bluestein",
+        "type": "person_author",
+        "legacy": {
+          "byline": [
+            "greg bluestein"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H",
+        "note": "Top-quality-point byline in Tableau (817,858). Example only."
+      },
+      {
+        "id": "ajc:entity/person/mike-luckovich",
+        "label": "Mike Luckovich",
+        "type": "person_author",
+        "legacy": {
+          "section_name": [
+            "Mike Luckovich"
+          ],
+          "tags": [
+            "luckovich"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H",
+        "note": "Section name is a person -> model as author/franchise, not a topic."
+      },
+      {
+        "id": "ajc:entity/person/ken-sugiura",
+        "label": "Ken Sugiura",
+        "type": "person_author",
+        "legacy": {
+          "section_name": [
+            "Ken Sugiura"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:entity/person/michael-cunningham",
+        "label": "Michael Cunningham",
+        "type": "person_author",
+        "legacy": {
+          "section_name": [
+            "Michael Cunningham"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:entity/org/delta-air-lines",
+        "label": "Delta Air Lines",
+        "type": "organization",
+        "aliases": [
+          "delta"
+        ],
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Illustrative entity; needs an entity-extraction pass."
+      },
+      {
+        "id": "ajc:entity/org/hartsfield-jackson",
+        "label": "Hartsfield-Jackson Airport",
+        "type": "organization",
+        "aliases": [
+          "atl airport"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "L",
+        "note": "Illustrative."
+      },
+      {
+        "id": "ajc:entity/team/atlanta-dream",
+        "label": "Atlanta Dream",
+        "type": "sports_team",
+        "topic": "ajc:topic/sports/basketball",
+        "legacy": {
+          "site_section": [
+            "/sports/atlanta-dream-headlines"
+          ]
+        },
+        "aliases": [
+          "dream",
+          "wnba"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Section traffic exists (3,332 views/30d); added in review.",
+        "level": "pro"
+      },
+      {
+        "id": "ajc:entity/event/world-cup-2026",
+        "label": "World Cup 2026",
+        "type": "event",
+        "aliases": [
+          "world cup",
+          "fifa world cup"
+        ],
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "About 150 headline mentions across Sports, Metro, Lifestyle, Business and Opinion. Tagged on top of normal topics."
+      },
+      {
+        "id": "ajc:entity/org/georgia-democratic-party",
+        "label": "Georgia Democratic Party",
+        "type": "organization",
+        "aliases": [
+          "georgia democrats"
+        ],
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Organization entity; coverage of the party, not reader affiliation."
+      },
+      {
+        "id": "ajc:entity/org/georgia-republican-party",
+        "label": "Georgia Republican Party",
+        "type": "organization",
+        "aliases": [
+          "georgia republicans",
+          "georgia gop"
+        ],
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Organization entity; coverage of the party, not reader affiliation."
+      },
+      {
+        "id": "ajc:entity/org/georgia-power",
+        "label": "Georgia Power",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Employers and brands. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:entity/org/coca-cola",
+        "label": "Coca-Cola",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Employers and brands. Added 2026-11-13.",
+        "aliases": [
+          "coke"
+        ]
+      },
+      {
+        "id": "ajc:entity/org/home-depot",
+        "label": "Home Depot",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Employers and brands. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:entity/org/waffle-house",
+        "label": "Waffle House",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Employers and brands. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:entity/org/six-flags",
+        "label": "Six Flags",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Employers and brands. Added 2026-11-13.",
+        "aliases": [
+          "six flags over georgia"
+        ]
+      },
+      {
+        "id": "ajc:entity/venue/mercedes-benz-stadium",
+        "label": "Mercedes-Benz Stadium",
+        "type": "place_venue",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Venues and parks. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:entity/venue/state-farm-arena",
+        "label": "State Farm Arena",
+        "type": "place_venue",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Venues and parks. Added 2026-11-13.",
+        "aliases": [
+          "farm arena"
+        ]
+      },
+      {
+        "id": "ajc:entity/venue/piedmont-park",
+        "label": "Piedmont Park",
+        "type": "place_venue",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Venues and parks. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:entity/venue/atlanta-beltline",
+        "label": "Atlanta BeltLine",
+        "type": "place_venue",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Venues and parks. Added 2026-11-13.",
+        "aliases": [
+          "beltline"
+        ]
+      },
+      {
+        "id": "ajc:entity/org/high-museum",
+        "label": "High Museum of Art",
+        "type": "organization",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Cultural institution. Added 2026-11-13.",
+        "aliases": [
+          "high museum"
+        ]
+      },
+      {
+        "id": "ajc:entity/gov/atlanta-city-council",
+        "label": "Atlanta City Council",
+        "type": "government_body",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Government body. Verify exact bodies with the politics and metro desks. Added 2026-11-13.",
+        "aliases": [
+          "city council"
+        ]
+      },
+      {
+        "id": "ajc:entity/gov/georgia-supreme-court",
+        "label": "Georgia Supreme Court",
+        "type": "government_body",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Government body. Verify exact bodies with the politics and metro desks. Added 2026-11-13.",
+        "aliases": [
+          "supreme court"
+        ]
+      },
+      {
+        "id": "ajc:entity/gov/university-system-of-georgia",
+        "label": "University System of Georgia",
+        "type": "government_body",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Government body. Verify exact bodies with the politics and metro desks. Added 2026-11-13.",
+        "aliases": [
+          "usg"
+        ]
+      },
+      {
+        "id": "ajc:entity/gov/state-election-board",
+        "label": "State Election Board",
+        "type": "government_body",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Government body. Verify exact bodies with the politics and metro desks. Added 2026-11-13.",
+        "aliases": [
+          "election board"
+        ]
+      },
+      {
+        "id": "ajc:entity/gov/fulton-county-commission",
+        "label": "Fulton County Commission",
+        "type": "government_body",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seed group per review; seen in headlines. Government body. Verify exact bodies with the politics and metro desks. Added 2026-11-13.",
+        "aliases": [
+          "fulton commission"
+        ]
+      },
+      {
+        "id": "ajc:entity/office/governor-of-georgia",
+        "label": "Governor of Georgia",
+        "type": "office",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Office entity (statewide); holders linked with start and end dates, loaded from an authoritative source, none stored here. Added 2026-11-13.",
+        "holders": []
+      },
+      {
+        "id": "ajc:entity/office/mayor-of-atlanta",
+        "label": "Mayor of Atlanta",
+        "type": "office",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Office entity (city); holders linked with start and end dates, loaded from an authoritative source, none stored here. Added 2026-11-13.",
+        "holders": []
+      },
+      {
+        "id": "ajc:entity/office/georgia-attorney-general",
+        "label": "Georgia Attorney General",
+        "type": "office",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Office entity (statewide); holders linked with start and end dates, loaded from an authoritative source, none stored here. Added 2026-11-13.",
+        "holders": []
+      },
+      {
+        "id": "ajc:entity/event-series/peachtree-road-race",
+        "label": "Peachtree Road Race",
+        "type": "event_series",
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Recurring series; yearly occurrences below. Seasonal decay. Added 2026-11-13.",
+        "occurrences": [
+          "2026"
+        ]
+      },
+      {
+        "id": "ajc:entity/event-series/shaky-knees",
+        "label": "Shaky Knees",
+        "type": "event_series",
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Recurring festival; 5 headline mentions, 23K views in the export. Added 2026-11-13.",
+        "occurrences": []
+      }
+    ],
+    "geo": [
+      {
+        "id": "ajc:geo/metro-atlanta",
+        "label": "Metro Atlanta",
+        "type": "target_region",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "tableau_target_region": "Metro Atlanta"
+        },
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/georgia-ex-metro",
+        "label": "Georgia (outside Metro)",
+        "type": "target_region",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "tableau_target_region": "Georgia Excluding Metro Atlanta"
+        },
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/southeast-ex-georgia",
+        "label": "Southeast (outside Georgia)",
+        "type": "target_region",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "tableau_target_region": "Southeast Excluding Georgia"
+        },
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/nation-ex-southeast",
+        "label": "Nation (outside Southeast)",
+        "type": "target_region",
+        "parent": null,
+        "level": 1,
+        "legacy": {
+          "tableau_target_region": "Nation Excluding Southeast"
+        },
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/atlanta-ga",
+        "label": "Atlanta",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "legacy": {
+          "city_string": "atlanta,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "28.8% of geo-tagged content in Tableau."
+      },
+      {
+        "id": "ajc:geo/city/marietta-ga",
+        "label": "Marietta",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "legacy": {
+          "city_string": "marietta,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/sandy-springs-ga",
+        "label": "Sandy Springs",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "legacy": {
+          "city_string": "sandy springs,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/roswell-ga",
+        "label": "Roswell",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "legacy": {
+          "city_string": "roswell,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/decatur-ga",
+        "label": "Decatur",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "legacy": {
+          "city_string": "decatur,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/athens-ga",
+        "label": "Athens",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "legacy": {
+          "city_string": "athens,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/savannah-ga",
+        "label": "Savannah",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "legacy": {
+          "city_string": "savannah,georgia"
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/city/macon-ga",
+        "label": "Macon",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "legacy": {
+          "city_string": "macon,georgia"
+        },
+        "follow": true,
+        "push": false,
+        "conf": "H"
+      },
+      {
+        "id": "ajc:geo/neighborhood/buckhead",
+        "label": "Buckhead",
+        "type": "neighborhood",
+        "parent": "ajc:geo/city/atlanta-ga",
+        "level": 3,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "ILLUSTRATIVE. No neighborhood field exists today; needs a polygon/gazetteer + tagging pass.",
+        "demand_evidence": "Onboarding \"Neighborhoods\" picked 849 times (8th of 13)."
+      },
+      {
+        "id": "ajc:geo/neighborhood/midtown",
+        "label": "Midtown",
+        "type": "neighborhood",
+        "parent": "ajc:geo/city/atlanta-ga",
+        "level": 3,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "ILLUSTRATIVE.",
+        "demand_evidence": "Onboarding \"Neighborhoods\" picked 849 times (8th of 13)."
+      },
+      {
+        "id": "ajc:geo/neighborhood/west-end",
+        "label": "West End",
+        "type": "neighborhood",
+        "parent": "ajc:geo/city/atlanta-ga",
+        "level": 3,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "ILLUSTRATIVE.",
+        "demand_evidence": "Onboarding \"Neighborhoods\" picked 849 times (8th of 13)."
+      },
+      {
+        "id": "ajc:geo/county/fulton",
+        "label": "Fulton County",
+        "type": "county",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Added per 2026-11-13 decision; not from AJC data. City-to-county parents still to be assigned (cities currently sit directly under the region)."
+      },
+      {
+        "id": "ajc:geo/county/dekalb",
+        "label": "DeKalb County",
+        "type": "county",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Added per 2026-11-13 decision; not from AJC data. City-to-county parents still to be assigned (cities currently sit directly under the region)."
+      },
+      {
+        "id": "ajc:geo/county/cobb",
+        "label": "Cobb County",
+        "type": "county",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Added per 2026-11-13 decision; not from AJC data. City-to-county parents still to be assigned (cities currently sit directly under the region)."
+      },
+      {
+        "id": "ajc:geo/county/gwinnett",
+        "label": "Gwinnett County",
+        "type": "county",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Added per 2026-11-13 decision; not from AJC data. City-to-county parents still to be assigned (cities currently sit directly under the region)."
+      },
+      {
+        "id": "ajc:geo/county/clayton",
+        "label": "Clayton County",
+        "type": "county",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": true,
+        "conf": "M",
+        "note": "Added per 2026-11-13 decision; not from AJC data. City-to-county parents still to be assigned (cities currently sit directly under the region)."
+      },
+      {
+        "id": "ajc:geo/region/north-georgia",
+        "label": "North Georgia",
+        "type": "georgia_region",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Named Georgia region; seen in headlines (South 30, North 14, Coastal 7). Boundaries to be confirmed by the state desk. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/region/south-georgia",
+        "label": "South Georgia",
+        "type": "georgia_region",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Named Georgia region; seen in headlines (South 30, North 14, Coastal 7). Boundaries to be confirmed by the state desk. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/region/coastal-georgia",
+        "label": "Coastal Georgia",
+        "type": "georgia_region",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Named Georgia region; seen in headlines (South 30, North 14, Coastal 7). Boundaries to be confirmed by the state desk. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/region/central-georgia",
+        "label": "Central Georgia",
+        "type": "georgia_region",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Named Georgia region; seen in headlines (South 30, North 14, Coastal 7). Boundaries to be defined by the state desk. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/cumming-ga",
+        "label": "Cumming",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/woodstock-ga",
+        "label": "Woodstock",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/lawrenceville-ga",
+        "label": "Lawrenceville",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/tucker-ga",
+        "label": "Tucker",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/smyrna-ga",
+        "label": "Smyrna",
+        "type": "city",
+        "parent": "ajc:geo/metro-atlanta",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/augusta-ga",
+        "label": "Augusta",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/columbus-ga",
+        "label": "Columbus",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:geo/city/gainesville-ga",
+        "label": "Gainesville",
+        "type": "city",
+        "parent": "ajc:geo/georgia-ex-metro",
+        "level": 2,
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seeded from the Tableau geo breakout; region and county parent to be assigned. Added 2026-11-13."
+      }
+    ],
+    "formats": [
+      {
+        "id": "ajc:format/article",
+        "label": "Article",
+        "legacy": {
+          "content_sub_type": [
+            "article",
+            "leadimagearticle"
+          ],
+          "content_type": [
+            "article",
+            "story",
+            "leadimagearticle"
+          ]
+        },
+        "conf": "H",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/live",
+        "label": "Live Blog / Updates",
+        "legacy": {
+          "content_sub_type": [
+            "liveblog",
+            "liveupdates"
+          ],
+          "content_type": [
+            "liveblog",
+            "liveupdates"
+          ]
+        },
+        "conf": "H",
+        "note": "Strong push candidate.",
+        "followable": true,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/video",
+        "label": "Video",
+        "legacy": {
+          "content_sub_type": [
+            "vod"
+          ],
+          "content_type": [
+            "vod",
+            "video",
+            "wibbitz",
+            "wsbtv"
+          ]
+        },
+        "conf": "H",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/gallery",
+        "label": "Photo Gallery",
+        "legacy": {
+          "content_type": [
+            "gallery"
+          ]
+        },
+        "conf": "H",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/newsletter",
+        "label": "Newsletter issue",
+        "legacy": {
+          "content_sub_type": [
+            "newsletter"
+          ],
+          "content_type": [
+            "newsletter"
+          ]
+        },
+        "conf": "H",
+        "followable": true,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/wire",
+        "label": "Wire",
+        "legacy": {
+          "content_sub_type": [
+            "wire"
+          ],
+          "tags": [
+            "natworld.ap"
+          ],
+          "content_type": [
+            "wire"
+          ]
+        },
+        "conf": "M",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/blog",
+        "label": "Blog",
+        "legacy": {
+          "content_sub_type": [
+            "blog"
+          ],
+          "content_type": [
+            "blog"
+          ]
+        },
+        "conf": "M",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/infobox",
+        "label": "Infobox / Explainer",
+        "legacy": {
+          "content_sub_type": [
+            "infobox"
+          ],
+          "section_name": [
+            "Info Boxes"
+          ]
+        },
+        "conf": "M",
+        "followable": false,
+        "kind": "story_format"
+      },
+      {
+        "id": "ajc:format/list",
+        "label": "List / roundup",
+        "kind": "story_format",
+        "legacy": {
+          "content_type": [
+            "list"
+          ]
+        },
+        "conf": "M",
+        "note": " Added 2026-11-13."
+      },
+      {
+        "id": "ajc:format/special-presentation",
+        "label": "Special presentation",
+        "kind": "story_format",
+        "legacy": {
+          "content_type": [
+            "specialpresentation"
+          ]
+        },
+        "conf": "M",
+        "note": " Added 2026-11-13."
+      }
+    ],
+    "programs": [
+      {
+        "id": "ajc:program/investigations",
+        "label": "Investigations",
+        "legacy": {
+          "section_name": [
+            "Investigations"
+          ],
+          "pod": [
+            "Investigative"
+          ]
+        },
+        "follow": true,
+        "push": true,
+        "conf": "H",
+        "note": "Cross-cutting lens (can be about any topic), so a program, not a topic.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/politically-georgia",
+        "label": "Politically Georgia",
+        "legacy": {
+          "section_name": [
+            "Politically Georgia"
+          ],
+          "tags": [
+            "thejolt"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "Barely appears as a headline prefix, so not prefix-detectable; detect by CMS section/tag. Confirm newsletter id. Added 2026-11-13.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": "push_politically-georgia"
+        },
+        "kind": "newsletter",
+        "detect": {},
+        "observed": {}
+      },
+      {
+        "id": "ajc:program/her-story",
+        "label": "Her+Story",
+        "legacy": {
+          "section_name": [
+            "Her+Story"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/peachtree-road-race",
+        "label": "Peachtree Road Race",
+        "legacy": {
+          "section_name": [
+            "Peachtree Road Race"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Seasonal; apply interest decay. Added 2026-11-13.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        },
+        "kind": "event_updates",
+        "detect": {
+          "headline_prefix": "peachtree road race updates"
+        },
+        "observed": {
+          "articles": 28,
+          "page_views": 596
+        }
+      },
+      {
+        "id": "ajc:program/ajc-columnists",
+        "label": "AJC Columnists",
+        "legacy": {
+          "section_name": [
+            "AJC Columnists"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/inspire-atlanta",
+        "label": "Inspire Atlanta",
+        "legacy": {
+          "section_name": [
+            "Inspire Atlanta"
+          ]
+        },
+        "follow": true,
+        "push": false,
+        "conf": "L",
+        "note": "Meaning unverified.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/daily-digest",
+        "label": "Daily Digest",
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "App feature and push category; confirm ids. Added 2026-11-13.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        },
+        "kind": "newsletter",
+        "detect": {},
+        "observed": {}
+      },
+      {
+        "id": "ajc:program/braves-report",
+        "label": "Braves Report",
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "Has an app topic value, so a channel likely exists. Added 2026-11-13.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        },
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "braves report"
+        },
+        "observed": {
+          "articles": 24,
+          "page_views": 2549
+        }
+      },
+      {
+        "id": "ajc:program/hawks-report",
+        "label": "Hawks Report",
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "Seen in native app Amplitude (app topic value). Channel ids to be confirmed.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/southern-fried-soccer",
+        "label": "Southern Fried Soccer",
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "Seen in native app Amplitude (app topic value). Channel ids to be confirmed.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/epaper",
+        "label": "AJC ePaper",
+        "follow": true,
+        "push": false,
+        "email": null,
+        "conf": "M",
+        "note": "Seen in native app Amplitude (app topic value + ePaper events). Channel ids to be confirmed.",
+        "channels": {
+          "follow": true,
+          "email": null,
+          "push_category": null
+        }
+      },
+      {
+        "id": "ajc:program/a-m-atl",
+        "label": "A.M. ATL",
+        "kind": "newsletter",
+        "detect": {
+          "headline_prefix": "a.m. atl"
+        },
+        "observed": {
+          "articles": 121,
+          "page_views": 3738
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Daily newsletter-style items; low web views, value is email. Confirm newsletter id. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/mike-luckovich",
+        "label": "Mike Luckovich cartoons",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "mike luckovich"
+        },
+        "observed": {
+          "articles": 117,
+          "page_views": 65277
+        },
+        "follow": true,
+        "push": false,
+        "conf": "M",
+        "note": "Also an author entity. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/readers-write",
+        "label": "Readers Write",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "readers write"
+        },
+        "observed": {
+          "articles": 144,
+          "page_views": 4519
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "All 144 items have no byline; program with no author. Followable only if a channel or demand exists. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/the-win-column",
+        "label": "The Win Column",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "the win column"
+        },
+        "observed": {
+          "articles": 51,
+          "page_views": 2932
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Sports. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/weekend-reflections",
+        "label": "Weekend Reflections",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "weekend reflections"
+        },
+        "observed": {
+          "articles": 26,
+          "page_views": 10546
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Sports. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/dirty-birds-dispatch",
+        "label": "Dirty Birds Dispatch",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "dirty birds dispatch"
+        },
+        "observed": {
+          "articles": 13,
+          "page_views": 2312
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Falcons. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/weekend-predictions",
+        "label": "Weekend Predictions",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "weekend predictions"
+        },
+        "observed": {
+          "articles": 11,
+          "page_views": 12112
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Sports picks. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/georgia-tech-takeaways",
+        "label": "Georgia Tech Takeaways",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "georgia tech takeaways"
+        },
+        "observed": {
+          "articles": 7,
+          "page_views": 16198
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/take-5",
+        "label": "Take 5",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "take 5"
+        },
+        "observed": {
+          "articles": 7,
+          "page_views": 9331
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/voices-spotlight",
+        "label": "Voices Spotlight",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "voices spotlight"
+        },
+        "observed": {
+          "articles": 5,
+          "page_views": 942
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Opinion. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/georgianomics",
+        "label": "Georgianomics",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "georgianomics"
+        },
+        "observed": {
+          "articles": 6,
+          "page_views": 1132
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Business. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/sweet-tea",
+        "label": "Sweet Tea",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "sweet tea"
+        },
+        "observed": {
+          "articles": 21,
+          "page_views": 245
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Tag-only: 245 total views. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/kick-it",
+        "label": "Kick It",
+        "kind": "column_cartoon_series",
+        "detect": {
+          "headline_prefix": "kick it"
+        },
+        "observed": {
+          "articles": 9,
+          "page_views": 28
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Tag-only: 28 total views. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/america-at-250",
+        "label": "America at 250",
+        "kind": "special_project",
+        "detect": {
+          "headline_prefix": "america at 250"
+        },
+        "observed": {
+          "articles": 16,
+          "page_views": 1525
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Opinion and Lifestyle. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:program/celebrating-nurses",
+        "label": "Celebrating Nurses",
+        "kind": "special_project",
+        "detect": {
+          "headline_prefix": "celebrating nurses"
+        },
+        "observed": {
+          "articles": 10,
+          "page_views": 1282
+        },
+        "follow": false,
+        "push": false,
+        "conf": "M",
+        "note": "Added 2026-11-13."
+      }
+    ],
+    "page_types": [
+      {
+        "id": "ajc:page/homepage",
+        "label": "Homepage",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "homepage"
+          ]
+        },
+        "views_30d": 4879422,
+        "interest_inference": false,
+        "conf": "H",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/section",
+        "label": "Section page",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "sectionpage",
+            "section front"
+          ]
+        },
+        "views_30d": 1196165,
+        "interest_inference": false,
+        "conf": "H",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/scores",
+        "label": "Scores",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "scores"
+          ]
+        },
+        "views_30d": 193355,
+        "interest_inference": false,
+        "conf": "H",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/standings",
+        "label": "Standings and rankings",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "stand",
+            "rank"
+          ]
+        },
+        "views_30d": 19917,
+        "interest_inference": false,
+        "conf": "M",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/profile",
+        "label": "Team or player profile",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "team_profile",
+            "player_profile"
+          ]
+        },
+        "views_30d": 24020,
+        "interest_inference": false,
+        "conf": "M",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/flatpage",
+        "label": "Flat page",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "flatpage"
+          ]
+        },
+        "views_30d": 3488,
+        "interest_inference": false,
+        "conf": "M",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      },
+      {
+        "id": "ajc:page/redirect",
+        "label": "Redirect",
+        "kind": "page_type",
+        "legacy": {
+          "content_type": [
+            "redirect"
+          ]
+        },
+        "views_30d": 546,
+        "interest_inference": false,
+        "conf": "M",
+        "note": "Page type, not a story: excluded from interest inference. Added 2026-11-13."
+      }
+    ]
+  },
+  "non_personalizable": {
+    "note": "Exist in Tableau Site Section Name but are not reader interests. Keep for analytics, exclude from interest inference and follow UI.",
+    "section_names": [
+      "Sponsor",
+      "Kaiser Permanente (Content Spotlight)",
+      "Contests",
+      "About Us",
+      "Info Boxes",
+      "Videos",
+      "Flagship Podcast page"
+    ],
+    "tags_to_strip": [
+      "team*  (staff team tags e.g. teamchris, teamsusan, teamjennifer)",
+      "runautolink-*",
+      "homepage",
+      "sectionpage",
+      "latest news",
+      "top-sports style ops tags"
+    ]
+  },
+  "unmapped_needs_review": [
+    "Pulse",
+    "Access Atlanta (brand vs section)",
+    "Inspire Atlanta",
+    "Get Schooled (blog vs education topic)",
+    "revenue_content (Editorial Team)",
+    "programming (Editorial Team)",
+    "Unassigned (Pod)"
+  ],
+  "interest_signal_model": {
+    "note": "Weights are PLACEHOLDERS to tune with data. Score per (user, node) = sum(weight * recency_decay), capped 0-1.",
+    "signals": [
+      {
+        "source": "manual_follow",
+        "type": "explicit",
+        "weight": 1.0,
+        "decay_days": null,
+        "existing_event": "none - new 'Topic Followed' / 'Topic Unfollowed'"
+      },
+      {
+        "source": "onboarding_topic",
+        "type": "explicit",
+        "weight": 0.8,
+        "decay_days": 180,
+        "existing_event": "User Onboarding Topic Selected / Removed"
+      },
+      {
+        "source": "newsletter_subscribe",
+        "type": "explicit",
+        "weight": 0.9,
+        "decay_days": null,
+        "existing_event": "Newsletter Subscribed / Unsubscribed"
+      },
+      {
+        "source": "push_opt_in",
+        "type": "explicit",
+        "weight": 0.9,
+        "decay_days": null,
+        "existing_event": "none - new 'Push Topic Subscribed' (native app)"
+      },
+      {
+        "source": "read_complete",
+        "type": "inferred",
+        "weight": 0.15,
+        "decay_days": 45,
+        "existing_event": "Content Completed (+ Content Depth Milestone)"
+      },
+      {
+        "source": "read_start",
+        "type": "inferred",
+        "weight": 0.04,
+        "decay_days": 30,
+        "existing_event": "Content Started"
+      },
+      {
+        "source": "page_view",
+        "type": "inferred",
+        "weight": 0.01,
+        "decay_days": 14,
+        "existing_event": "Page Viewed"
+      },
+      {
+        "source": "search_click",
+        "type": "inferred",
+        "weight": 0.1,
+        "decay_days": 30,
+        "existing_event": "Search Completed / Search Results Clicked"
+      },
+      {
+        "source": "unfollow_or_unsubscribe",
+        "type": "negative",
+        "weight": -1.0,
+        "decay_days": null,
+        "existing_event": "Newsletter Unsubscribed / Topic Unfollowed"
+      }
+    ],
+    "rules": [
+      "Explicit always outranks inferred.",
+      "Inferred scores roll up to parents at 50% (Falcons -> Football -> Sports); explicit follows do not roll up.",
+      "Obituaries and non-personalizable sections never generate inferred interest.",
+      "Geo: also store 'home geo' from registration/ZIP separately from 'read geo' inferred from content."
+    ],
+    "explicit_v1": [
+      "topic follow (web+app, new event)",
+      "push category opt-in (map Airship categories)",
+      "newsletter subscription (map newsletter ids)",
+      "onboarding picks (extend with geo and teams)"
+    ],
+    "inferred_policy": "Used silently to rank; not shown to readers in v1. Revisit before launch: readers cannot correct what they cannot see, and inferred political interest should be reviewed with legal/privacy.",
+    "volume_evidence_30d": {
+      "source": "Amplitude 764792, Oct 14 to Nov 13 2026",
+      "page_viewed_uniques": 2250399,
+      "content_started_uniques": 708380,
+      "content_started_totals": 1472559,
+      "content_completed_uniques": 125950,
+      "content_completed_totals": 460647,
+      "search_completed_totals": 19334,
+      "login_uniques": 27939,
+      "newsletter_subscribed_uniques": 1513,
+      "note": "About 1.2% of users log in; completions are about 18% of starters; explicit signals are rare so inferred signals carry the scale."
+    },
+    "anonymous_readers": {
+      "rule": "Keep interest per device from the first visit; merge into the account on login.",
+      "needs": "privacy review: consent, retention, merge behavior"
+    },
+    "weights": {
+      "method": "calibrate against outcomes before launch",
+      "plan": "test which signals (read start, completion, follows, newsletter, search) predict a return visit or a subscription start; set weights from that; keep explicit above inferred"
+    },
+    "page_types_ignored": true
+  },
+  "content_tagging_contract": {
+    "note": "What every article should carry for personalization + search APIs. Proposed new fields, to be added to the Arc/CMS metadata and then to Amplitude event properties.",
+    "fields": {
+      "primary_topic_id": "single L1/L2 topic id (required)",
+      "secondary_topic_ids": "0-3 topic ids",
+      "entity_ids": "teams, people, orgs mentioned",
+      "geo_ids": "most specific geo node(s) + auto-added ancestors",
+      "author_ids": "ids split from the comma-joined byline string",
+      "format_id": "one of ajc:format/*",
+      "program_ids": "series / franchise",
+      "access": "free | paid  (today: article_type)"
+    }
+  },
+  "api_notes": {
+    "personalization": "GET /users/{id}/interests?facet=topics -> [{node_id, score, sources:[explicit|inferred], last_signal_ts}]. Rank candidate content by weighted overlap of content ids and ancestor ids with user interest scores.",
+    "search": "Index per content: label + alias expansion of every tagged node; expose facets topic, entity, geo, author, format, program. Query 'Buckhead' should resolve via alias to ajc:geo/neighborhood/buckhead and boost geo-tagged content."
+  },
+  "onboarding_map": {
+    "source": "User Onboarding Topic Selected.selection_text, 764792, Aug 1-Nov 13 2026 (event totals)",
+    "map": {
+      "News": {
+        "node": "ajc:topic/news",
+        "selected": 1308
+      },
+      "Politics": {
+        "node": "ajc:topic/politics",
+        "selected": 1292
+      },
+      "Sports": {
+        "node": "ajc:topic/sports",
+        "selected": 1239
+      },
+      "Arts & Entertainment": {
+        "node": "ajc:topic/arts-entertainment",
+        "selected": 1176
+      },
+      "Food & Dining": {
+        "node": "ajc:topic/food-dining",
+        "selected": 1132
+      },
+      "Business": {
+        "node": "ajc:topic/business",
+        "selected": 1079
+      },
+      "Things To Do": {
+        "node": "ajc:topic/lifestyle/things-to-do",
+        "selected": 1050
+      },
+      "Neighborhoods": {
+        "node": "ajc:geo (neighborhood picker; no topic node)",
+        "selected": 849,
+        "note": "Triggers a geo step: ask for city/neighborhood, store as ajc:geo/* follow."
+      },
+      "Travel": {
+        "node": "ajc:topic/lifestyle/travel",
+        "selected": 843
+      },
+      "Weather": {
+        "node": "ajc:topic/weather",
+        "selected": 816
+      },
+      "Education": {
+        "node": "ajc:topic/education",
+        "selected": 770
+      },
+      "Wellness": {
+        "node": "ajc:topic/lifestyle/wellness",
+        "selected": 725
+      },
+      "Opinion": {
+        "node": "ajc:topic/opinion",
+        "selected": 707
+      }
+    },
+    "ignore_values": [
+      "Clear all"
+    ]
+  },
+  "decisions": [
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Politics L2 = arenas plus issues"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Sports entities stop at team in v1; no individual athletes yet"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Lifestyle is an editor-only grouping; readers see Things To Do, Travel, Wellness directly"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "policy",
+      "decision": "No inferred or offered partisan identity for readers (recommended, pending legal/privacy review); party is a content-side attribute of politician entities"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "v1 politicians = Georgia officeholders and candidates; national figures deferred"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "v1 entity types add organizations, places/venues, events, legal cases"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Hybrid upkeep: auto-extraction proposes, newsroom approves and merges aliases"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Neighborhoods: City of Atlanta first"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Add counties, school districts, legislative districts"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Home geo from onboarding picker and subscriber address/ZIP, not inferred from reading"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "formats",
+      "decision": "Followable: newsletters, live coverage, Daily Digest and ePaper"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "programs",
+      "decision": "One id, many channels (newsletter, push, follow)"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Staff table keyed to CMS ids; follow for staff only"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "interest-model",
+      "decision": "Explicit v1 = topic follow, push category opt-in, newsletter subscription, onboarding picks"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "interest-model",
+      "decision": "Inferred interest used silently in v1"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "governance",
+      "decision": "Owners named; change process decided later"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "governance",
+      "decision": "Adopt seven tagging/governance practices from Adobe guidance (tag at creation, formats as filters, cadence and retirement, per-field docs, internal tags hidden, retire not delete, evaluate IPTC)"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Entity rule: curated seed list plus auto-promote with editor approval"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Add Atlanta Dream and other pro teams; high schools become entities"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Politician seed from official rosters, newsroom-confirmed"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Every opinion author gets their own followable author tag; recurring columns can also be programs"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "method",
+      "decision": "Joined Tableau article export to Amplitude on content_id; use it as the basis for entity and child-topic candidates"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Politics adds Statewide Offices, U.S. Congress, Courts & Justice, Parties"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "News adds Local Government, Courts & Trials, Nation & World, Environment & Energy"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Sport is a topic; pro/college/high school is a level attribute"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Cross-pod events (World Cup) are event entities tagged on top of normal topics"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Business adds Data Centers & Energy, Aviation & Airport; Economy/Jobs/Prices and Retail & Real Estate confirmed"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Food & Dining adds Restaurants & Openings, Food Events & Pop-ups; Things To Do adds Festivals & Concerts, Weekend Guides"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "Opinion = subject topic plus an Opinion label (attribute), not a separate tree"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "topics",
+      "decision": "High school: GHSA class and region as attributes; rankings/projections, playoffs-as-events and non-football sports deferred"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "programs",
+      "decision": "v1 program kinds: newsletters, columns/cartoons/series, special projects and event updates; data products deferred"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "programs",
+      "decision": "CMS program field going forward, backfilled by headline-prefix rules"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "programs",
+      "decision": "Followable only with a channel or real demand; others tag-only"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Org bylines typed: Editorial Board followable; wire, partners, AJC Staff recorded not followable"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Launch nodes: staff with 10+ articles plus all opinion authors"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Readers Write is a program with no author"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Parse bylines into name, affiliation and role"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "authors",
+      "decision": "Author beat derived from last 90 days of stories"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Coaches and athletes: auto-promote only, no seed list"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Seed groups: major employers and brands, venues/parks/airport, cultural institutions and festivals, government bodies"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Offices are entities with dated holders"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Recurring events are series with yearly occurrences"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Add Georgia regions: North, South, Coastal, Central"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Primary geo from body and dateline, not headline mention"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Seed 16 cities plus five metro counties; auto-promote the rest"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "geo",
+      "decision": "Required scope attribute: local, state, regional, national, world"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "formats",
+      "decision": "Two attributes: page type (homepage, section, scores, standings, profile) and story format"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "entities",
+      "decision": "Hub page per entity, linked to its node; profile pages become hubs"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "interest-model",
+      "decision": "Anonymous readers: device profile from first visit, merged on login (privacy review needed)"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "interest-model",
+      "decision": "Weights calibrated against outcomes before launch"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "auto-tagging",
+      "decision": "Architecture: rules plus dictionary plus model with human review"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "auto-tagging",
+      "decision": "Review: auto-apply high confidence, queue the rest"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "auto-tagging",
+      "decision": "Backfill: whole archive in one pass (era batches, newest first)"
+    },
+    {
+      "date": "2026-11-13",
+      "section": "auto-tagging",
+      "decision": "Evaluation: 500 editor-labeled articles, per-facet precision and recall"
+    }
+  ],
+  "native_app_findings": {
+    "project": "AJC News App 631765",
+    "push_vendor": "Airship",
+    "push_category_values_seen": [
+      "push_breaking",
+      "push_politics",
+      "push_news",
+      "push_politically-georgia",
+      "geo_georgia",
+      "geo_atlanta"
+    ],
+    "user_properties": [
+      "gp:attributes.push_opt_in",
+      "gp:KGNotificationsAllowedSt"
+    ],
+    "user_action_topic_values_seen": [
+      "Sports",
+      "Politics",
+      "Breaking News",
+      "Business",
+      "Local News",
+      "Food",
+      "Arts & Entertainment",
+      "Opinion",
+      "Weather",
+      "Travel",
+      "Wellness",
+      "Education",
+      "Crime & Public Safety",
+      "Daily Digest",
+      "Braves Report",
+      "Hawks Report",
+      "Southern Fried Soccer"
+    ],
+    "unverified": "What user_action.topic records (opt-in vs tap) not confirmed"
+  },
+  "entity_types": {
+    "sports_team": {
+      "v1": true
+    },
+    "person_author": {
+      "v1": true
+    },
+    "person_politician": {
+      "v1": true,
+      "scope": "Georgia officeholders and candidates",
+      "attributes": [
+        "office",
+        "jurisdiction",
+        "party (factual, content-side only)",
+        "role_start",
+        "role_end",
+        "status: incumbent|candidate|former"
+      ],
+      "note": "Roles are dated. Do not hardcode current offices in this file; verify from an authoritative source at load time (a 2026 election just concluded)."
+    },
+    "organization": {
+      "v1": true,
+      "examples_to_confirm": [
+        "Delta Air Lines",
+        "MARTA",
+        "Atlanta Public Schools"
+      ]
+    },
+    "place_venue": {
+      "v1": true,
+      "examples_to_confirm": [
+        "Hartsfield-Jackson Airport",
+        "Mercedes-Benz Stadium",
+        "Atlanta BeltLine"
+      ]
+    },
+    "event": {
+      "v1": true,
+      "examples_to_confirm": [
+        "Peachtree Road Race",
+        "Georgia legislative session"
+      ]
+    },
+    "legal_case": {
+      "v1": true,
+      "note": "Long-running named cases and trials"
+    },
+    "person_athlete": {
+      "v1": true,
+      "note": "Auto-promote only (no seed list); coaches and players enter when they pass the 90-day mention threshold; sports desk approves."
+    },
+    "high_school": {
+      "v1": true,
+      "note": "/sports/varsity is the 3rd-largest section (672,862 views in 30 days). Many nodes; link to county and school district."
+    },
+    "office": {
+      "v1": true,
+      "note": "Offices (governor, mayor, attorney general) are entities; a person links to an office with start and end dates. Following an office follows whoever holds it."
+    },
+    "government_body": {
+      "v1": true
+    },
+    "event_series": {
+      "v1": true,
+      "note": "One followable series node with a node per year for archives and analytics."
+    }
+  },
+  "geo_levels": [
+    "target_region",
+    "georgia_region",
+    "county",
+    "city",
+    "neighborhood"
+  ],
+  "geo_overlays": {
+    "school_district": {
+      "note": "Parallel hierarchy; a story can tag a district and a city"
+    },
+    "legislative_district": {
+      "note": "Congressional, state senate, state house; link politician entities to the districts they represent"
+    }
+  },
+  "neighborhood_scope": "City of Atlanta first (official neighborhood/NPU boundaries); other cities by demand",
+  "home_geo": {
+    "sources": [
+      "onboarding picker (explicit, opt-in)",
+      "subscriber address or ZIP (needs privacy review before use in personalization)"
+    ],
+    "not_used": "inferring from reading"
+  },
+  "program_model": "One id per program; newsletter, push category and follow are channels on it. Existing Airship categories (push_*) map to program or topic ids.",
+  "formats_followable": [
+    "newsletters (id list needed)",
+    "live coverage",
+    "Daily Digest and ePaper (modeled as programs)"
+  ],
+  "authors_model": {
+    "source": "staff table keyed to CMS ids",
+    "steps": [
+      "split comma-joined bylines",
+      "normalize case",
+      "match to staff table",
+      "store author_ids"
+    ],
+    "followable": "staff only",
+    "external": "wire/freelance recorded but not followable in v1",
+    "opinion_authors": {
+      "rule": "Every opinion author (columnists, editorial board members, cartoonists, guest contributors who recur) gets their own author entity and tag; opinion pieces also carry the Opinion topic.",
+      "why": "Opinion readers follow voices, not sections. Several are already sections (Mike Luckovich, Ken Sugiura, Michael Cunningham) or blogs.",
+      "followable": true,
+      "recurring_columns": "a named recurring column can also be a program (for example a blog or column title)",
+      "label_in_ui": "mark as Opinion so readers can tell it from news reporting"
+    },
+    "launch_nodes": "staff with 10+ articles (about 100 in the export) plus all opinion authors; others auto-promoted when they pass the threshold",
+    "org_authors": {
+      "editorial_board": "AJC Editorial Board: followable opinion author",
+      "ajc_staff": "AJC Staff / Staff / Staff Reports: source type, not followable",
+      "wire": "Associated Press: source type, not followable",
+      "partner": "ProPublica, The 74, ArtsATL staff: source type, not followable",
+      "broadcast": "Channel 2 Action News: source type, not followable",
+      "guest_org": "guest organizations: recorded, not followable"
+    },
+    "no_byline": "Readers Write letters (all 144 blank) are a program with a null author; not credited to a person or the Editorial Board. Other blank bylines (266: Metro 186, Unassigned 42, others) are a data-quality queue.",
+    "parsing": {
+      "steps": [
+        "strip trailing dashes",
+        "split name, affiliation in parentheses or after a dash, and role (e.g. special to the AJC)",
+        "store author_name, org, role",
+        "normalize case and accents for matching"
+      ],
+      "examples": [
+        "max blau (propublica)",
+        "roni robbins – special to the ajc",
+        "linda jacobson - the 74"
+      ]
+    },
+    "beat": "Derived from each author's last 90 days of stories; following an author is a stronger interest signal for those topics. 22 authors with 10+ articles span 3 or more pods.",
+    "export_stats": {
+      "distinct": 737,
+      "one_article": 493,
+      "ten_plus": 100,
+      "blank": 410,
+      "readers_write_blank": 144
+    }
+  },
+  "governance": {
+    "owners": [
+      "Zachary Firestone",
+      "Alex Schrange",
+      "Corbin Fricker"
+    ],
+    "change_process": "TBD (decided: decide later, after pilot)",
+    "practices": [
+      "Tag at creation: required tag fields in authoring; pilot backfill is a one-time test",
+      "Plain metadata (content type, access) stays a filter; followable formats are modeled as programs",
+      "Request-and-review cadence, glossary as authoritative vocabulary, usage audits, term retirement path",
+      "Per-field documentation: how filled (extracted/derived/manual), maintainer, cost to obtain, onboarding",
+      "Internal tags (team*, runautolink-*) never exposed to personalization or search APIs",
+      "Retire, do not delete: archive terms and keep ids",
+      "Evaluate IPTC Media Topics and schema.org alignment (our suggestion, not yet compared)"
+    ],
+    "source": "Adobe tags/taxonomy/metadata best-practices guide plus review discussion"
+  },
+  "formats_role": "filter/metric; followable formats (newsletter, live coverage) are modeled as programs",
+  "entity_rule": {
+    "model": "seed list plus auto-promote",
+    "auto_promote": "appears in N stories over 90 days (N set from the article export); editor approves before the node is followable",
+    "seeds": {
+      "sports_team": "current six + Atlanta Dream + other pro teams (newsroom to list)",
+      "high_school": "every school with a varsity program; linked to county and school district",
+      "person_politician": "official state and federal rosters incl. declared candidates, dated roles, newsroom-confirmed",
+      "organization/place_venue/event/legal_case": "newsroom seed, then auto-promote"
+    },
+    "athletes_and_coaches": "auto-promote only, no seed list",
+    "org_seed_groups": [
+      "major employers and brands",
+      "venues, parks and airport",
+      "cultural institutions and festivals",
+      "government bodies"
+    ]
+  },
+  "coverage_test_2026-11-13": {
+    "source": "Amplitude 764792 Page Viewed by site_section, last 30 days, top 100 sections",
+    "nav_share": "47% homepage and \"/\"",
+    "editorial_mapped": "about 98% by hand-mapped proxy",
+    "biggest_gaps": {
+      "news/nation-world": 68596,
+      "aging-senior-living": 17019,
+      "homes-real-estate-features": 13164,
+      "pulse": 9953,
+      "black-history-culture": 6387,
+      "atlanta-dream": 3332
+    },
+    "limit": "section paths only; child-level coverage needs article-level tags"
+  },
+  "article_export_findings": {
+    "source": "Tableau Newsroom Dashboard, Byline Table (Trend), CSV, Apr 1 to Nov 12 2026; 7,803 articles; columns: Content Id, publish date, byline, pod, headline, quality points, performance vs pod median, page views, sub starts, registrations, legacy quality points. No section or tags.",
+    "join_key": "Tableau Content Id = Amplitude content_id on Page Viewed (verified on one article: 87,286 vs 87,557 views)",
+    "pods_share_of_pv": {
+      "Politics": 29.0,
+      "Metro/State": 20.2,
+      "Pro & College Sports": 18.4,
+      "Lifestyle": 9.0,
+      "Varsity": 9.0,
+      "Business": 8.2,
+      "Opinion": 5.1,
+      "Investigative": 1.0
+    },
+    "authors": {
+      "distinct": 737,
+      "blank_byline_pct": 5.3,
+      "multi_author_articles": 470,
+      "top25_pv_share": 66.9,
+      "top50_pv_share": 86.3,
+      "top100_pv_share": 95.8,
+      "implication": "seed author tags with the top ~100, auto-promote the rest"
+    },
+    "caveats": [
+      "headline keyword counts only; headline mention is not topic",
+      "dates span 7.5 months and include the 2026 election peak",
+      "raw CSV stays in Downloads, not in the repo"
+    ],
+    "neighborhood_finding": "Headlines rarely name neighborhoods (Buckhead 16 articles, Midtown 24, Beltline 31, West End 0), while 849 onboarding picks chose Neighborhoods. Neighborhood tags must come from body text/dateline/location data, not headlines.",
+    "alias_finding": "UGA appears as uga, bulldogs, georgia football, georgia baseball, kirby smart; \"georgia\" is ambiguous with the state. Entity resolution needs aliases and context."
+  },
+  "candidates_from_export": {
+    "note": "Candidates only; newsroom confirms. Counts are headline mentions over the export window.",
+    "people": [
+      [
+        "Keisha Lance Bottoms",
+        46,
+        311406
+      ],
+      [
+        "Jon Ossoff",
+        36,
+        159895
+      ],
+      [
+        "Brian Kemp",
+        19,
+        100825
+      ],
+      [
+        "Rick Jackson",
+        48,
+        111013
+      ],
+      [
+        "Mike Collins",
+        34,
+        67670
+      ],
+      [
+        "Burt Jones",
+        19,
+        11743
+      ],
+      [
+        "Kirby Smart",
+        79,
+        82909
+      ],
+      [
+        "Brent Key",
+        17,
+        29879
+      ],
+      [
+        "Michael Penix Jr.",
+        28,
+        12706
+      ],
+      [
+        "Gunner Stockton",
+        17,
+        7338
+      ],
+      [
+        "Angel Reese",
+        20,
+        4185
+      ],
+      [
+        "Mike Luckovich",
+        117,
+        65277
+      ]
+    ],
+    "programs": [
+      [
+        "Readers Write",
+        144,
+        4519
+      ],
+      [
+        "A.M. ATL",
+        121,
+        3738
+      ],
+      [
+        "Win Column",
+        51,
+        2932
+      ],
+      [
+        "Weekend Reflections",
+        26,
+        10546
+      ],
+      [
+        "Braves Report",
+        24,
+        2549
+      ],
+      [
+        "AJC Poll",
+        13,
+        56060
+      ]
+    ],
+    "events": [
+      [
+        "World Cup",
+        150,
+        8328
+      ],
+      [
+        "WNBA Finals",
+        25,
+        26586
+      ],
+      [
+        "Peachtree Road Race",
+        28,
+        596
+      ],
+      [
+        "Governor race (2026)",
+        26,
+        40040
+      ],
+      [
+        "Senate race (2026)",
+        16,
+        33780
+      ],
+      [
+        "Early voting",
+        14,
+        67162
+      ],
+      [
+        "NFL draft",
+        19,
+        144
+      ]
+    ],
+    "topics": [
+      [
+        "Data centers",
+        64,
+        55538
+      ],
+      [
+        "Guns",
+        65,
+        88084
+      ],
+      [
+        "Voting / elections",
+        203,
+        267840
+      ],
+      [
+        "Courts and trials",
+        127,
+        98746
+      ],
+      [
+        "Crime",
+        174,
+        180418
+      ]
+    ],
+    "orgs_places": [
+      [
+        "Georgia Power",
+        25,
+        30394
+      ],
+      [
+        "Delta",
+        33,
+        35280
+      ],
+      [
+        "Six Flags",
+        8,
+        61764
+      ],
+      [
+        "Hartsfield-Jackson / airport",
+        31,
+        20307
+      ],
+      [
+        "Coca-Cola",
+        17,
+        28426
+      ]
+    ],
+    "fields": "[name, articles, page views]"
+  },
+  "content_attributes": {
+    "sports_level": {
+      "values": [
+        "pro",
+        "college",
+        "high_school"
+      ],
+      "applies_to": "sports stories and sports teams",
+      "note": "Sport is a topic; level is an attribute, so Football is one topic, not three."
+    },
+    "event_tagging": "Events (for example World Cup) are tagged on top of the normal topics; they do not replace them.",
+    "opinion_label": {
+      "rule": "Opinion pieces carry their subject topic plus an Opinion label; the label is an attribute, not a duplicate tree. Opinion authors keep their own tags.",
+      "ui": "show an Opinion badge"
+    },
+    "ghsa": {
+      "attributes": [
+        "classification",
+        "region"
+      ],
+      "values": null,
+      "note": "Values to be provided by the sports desk; applies to high-school stories and school entities."
+    }
+  },
+  "program_policy": {
+    "kinds_in_v1": [
+      "newsletter",
+      "column_cartoon_series",
+      "special_project",
+      "event_updates"
+    ],
+    "deferred_candidates": {
+      "data_products": [
+        "AJC Poll (13 articles, 56,060 views)",
+        "Where They Stand (6, 36,577)",
+        "AJC Varsity Rankings (12, 34,353)",
+        "Maxwell Projections (about 50 mentions, 30,261)",
+        "Composite Rankings",
+        "Improvement Tracker"
+      ]
+    },
+    "tagging": "Add a required CMS program field going forward; backfill history with headline-prefix rules (the detect fields). Prefix coverage is good for most programs; Politically Georgia needs a CMS tag.",
+    "followable_rule": "Followable only if the program has a newsletter or push channel, or meets a traffic threshold (threshold to set); others are tag-only for analytics."
+  },
+  "geo_rules": {
+    "primary_geo": "One primary geo = where the event happened, from body and dateline; up to three secondary geos; a headline mention alone does not decide it.",
+    "scope_attribute": {
+      "required": true,
+      "values": [
+        "local",
+        "state",
+        "regional",
+        "national",
+        "world"
+      ],
+      "note": "Geo nodes apply on top for local and state stories."
+    },
+    "seed": "Seed the 16 cities from the Tableau geo breakout plus the five metro counties; other cities and rural counties (for example Thomas, Lee, Appling, Colquitt) are auto-promoted with editor approval."
+  },
+  "format_evidence": {
+    "source": "Amplitude 764792 Page Viewed by content_type, last 30 days",
+    "note": "content_sub_type is essentially empty on the web; Tableau subtypes (article, infobox, leadimagearticle, liveblog, liveupdates, newsletter, vod) come from the CMS. Web content_type mixes page types and story formats.",
+    "values_30d": {
+      "homepage": 4879422,
+      "article": 4384343,
+      "sectionpage": 1196165,
+      "scores": 193355,
+      "newsletter": 146979,
+      "liveblog": 134178,
+      "gallery": 105563,
+      "wire": 78224,
+      "blog": 68603,
+      "vod": 39671,
+      "team_profile": 23394,
+      "list": 15025,
+      "rank": 13536,
+      "stand": 6381,
+      "flatpage": 3488,
+      "specialpresentation": 3317
+    }
+  },
+  "entity_hubs": {
+    "rule": "Each entity node points to a hub page listing its stories and facts; following is available on the hub; existing team and player profile pages (about 24K views in 30 days) become hubs.",
+    "types": [
+      "team",
+      "person",
+      "organization",
+      "venue",
+      "event_series",
+      "office"
+    ]
+  },
+  "auto_tagging": {
+    "plan": "auto-tagging-plan.md",
+    "architecture": "rules + dictionary + model, with human review",
+    "review": "auto-apply high confidence, queue the rest; entity promotions and new geo always reviewed",
+    "backfill": "whole archive in one pass (staged option was recommended; risks documented)",
+    "evaluation": "editors label about 500 articles; per-facet precision and recall; targets set before launch",
+    "baseline_rules_only": {
+      "topic_from_pod_articles_pct": 98.9,
+      "deeper_tag_articles_pct": 52.1,
+      "deeper_tag_pageviews_pct": 48.2,
+      "topic_only_articles_pct": 46.9,
+      "note": "headline-only floor on 7,803 articles; not an accuracy measure"
+    },
+    "provenance_fields": [
+      "source",
+      "confidence",
+      "model_version",
+      "taxonomy_version"
+    ]
+  }
+}
