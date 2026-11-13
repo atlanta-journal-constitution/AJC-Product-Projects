@@ -4,7 +4,7 @@ Files in this folder
 - [taxonomy.json](taxonomy.json): the machine-readable taxonomy (nodes, entity types, decisions log, interest model).
 - [taxonomy-explorer.html](taxonomy-explorer.html): searchable browser generated from the JSON (`viewer.template.html` is its source).
 - [auto-tagging-plan.md](auto-tagging-plan.md): draft plan to tag existing and new content against this taxonomy.
-- Leadership brief: a private Claude Doc, "AJC Content Taxonomy: Leadership Brief".
+- [Leadership brief](https://claude.ai/artifact/AMxXCbq2thibV5DoRSKnoE): "AJC Content Taxonomy: Leadership Brief", a Claude Doc. It is private to its owner until shared from the doc's Share menu, so the link will not open for others before then.
 
 Owners: Zachary Firestone, Alex Schrange, Corbin Fricker. Change process: decided later, after the pilot.
 
